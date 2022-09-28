@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="stylsheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="card-backside">
+      <img class="credit-card-picture" src="images/bg-card-back.png" alt= "credit-card backside">
+      <p class="credit-card-cvs-number" id="credit-card-cvs-number">000</p>
+    </div>
+    <div class="card-frontside">
+      <img class="credit-card-picture" src="images/bg-card-front.png" alt="credit-card frontside">
+      <img src="images/card-logo.svg" alt="credit-card logo" class="credit-card-logo">
+      <p class="credit-card-number" id="credit-card-number">0000 0000 0000 0000</p>
+      <p class="credit-card-name" id="credit-card-name">Jane Applessed</p>
+      <p class="credit-card-expire" id="credit-card-expire">00/00</p>
+
+      <!-- placeholder in forms are not accessible!! -->
+      <!-- use arialabel or aria-labeled-by insteaad  -->
+      <!-- aria-hidden="true" hides something from screen-reader -->
+      <!-- aria-labelledby works with hidden elements as well (display: none, visiblity: hidden) -->
+
+    </div>
+  </header>
+  <main>
+    <section class="form" id="form">
+      <form action="/#" aria-label="Credit card details">
+        <label for="name">cardholder name</label>
+        <input type="text" id="name" placeholder="e.g. Jane Applessed">
+
+        <label for="number">card number</label>
+        <input type="phone" id="number" placeholder="e.g. 1234 5678 9123 0000">
+        <label for="month">Exp. date (MM/YY)</label>
+        <input type="phone" id="month" placeholder="MM" aria-label="expire date month">
+        <input type="phone" id="year" placeholder="YY" aria-label="expire date year" >
+        <label for="cvc">CVC</label>
+        <input type="phone" id="cvc" placeholder="e.g. 123">
+
+        <button class="confirm">Confirm</button>
+      </form>
+    </section>
+    <section class="success" id="success">
+      <div class="thank-you-container">
+        <img class="logo-success"src="images/icon-complete.svg" alt="sucess">
+        <p class="thank-you">thank you!</p>
+        <p class="confirmation">We’ve added your card details</p>
+        <button class="continue">Continue</button>
+      </div>
+
+    </section>
+    <section class="error" id="error">
+      <div class="errors-container">
+        <div class="errors-content">
+          <p class="feedback-text">Somthing is wrong with <span id="feedback"></span></p>
+          <p class="advice" id="advice"></p>
+        </div>
+        <button class="close" aria-label="close the window">close</button>
+      </div>
+      <!-- implausible data:  -->
+      <!-- Need first- and last name. Oder: Please enter complete name according to the card -->
+      <!-- card number implausible  -->
+      <!-- Month musst be a number between 1 and 12   -->
+      <!-- card has expired  -->
+      <!-- cvc is too long. Three digits only  -->
+    </section>
+  </main>
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
