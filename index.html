@@ -42,14 +42,14 @@
         <input type="text" id="name" placeholder="e.g. Jane Applessed" autofocus>
 
         <label for="number">card number</label>
-        <input type="phone" id="number" placeholder="e.g. 1234 5678 9123 0000">
+        <input type="phone" id="number" placeholder="e.g. 1234 5678 9123 0000" >
         <label for="month">Exp. date (MM/YY)</label>
         <input type="phone" id="month" placeholder="MM" aria-label="expire date month">
         <input type="phone" id="year" placeholder="YY" aria-label="expire date year" >
         <label for="cvc">CVC</label>
         <input type="phone" id="cvc" placeholder="e.g. 123">
 
-        <button class="confirm">Confirm</button>
+        <button class="confirm" id="confirm">Confirm</button>
       </form>
     </section>
     <section class="success" id="success">
@@ -57,17 +57,18 @@
         <img class="logo-success"src="images/icon-complete.svg" alt="sucess">
         <p class="thank-you">thank you!</p>
         <p class="confirmation">We’ve added your card details</p>
-        <button class="continue">Continue</button>
+        <button class="continue" id="continue">Continue</button>
       </div>
 
     </section>
     <section class="error" id="error">
       <div class="errors-container">
         <div class="errors-content">
-          <p class="feedback-text">Somthing is wrong with <span id="feedback"></span></p>
+          <p class="feedback-text">Somthing is wrong with <span id="feedback"></span>.</p>
+          <br>
           <p class="advice" id="advice"></p>
         </div>
-        <button class="close" aria-label="close the window">close</button>
+        <button class="close" id="close" aria-label="close the window">close</button>
       </div>
       <!-- implausible data:  -->
       <!-- Need first- and last name. Oder: Please enter complete name according to the card -->

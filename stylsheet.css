@@ -60,9 +60,6 @@ header {
         max-width:400px;
         height: 100vh;
     }
-    main {
-        max-width: 450px;
-    }
 
     .card-backside {
         top:50%;
@@ -130,6 +127,10 @@ header {
 
 main {
     padding:90px 24px;
+}
+
+@media screen and (min-width:900px) {
+    main {max-width: 450px;}
 }
 
 form {
@@ -217,7 +218,6 @@ label[for="cvc"]{
 }
 
 
-
 /* STYLING THE THANK-YOU-AREA */
 .success {display: none;}
 .thank-you-container {
@@ -250,6 +250,7 @@ label[for="cvc"]{
 
 .error {
     display:none;
+    padding-top:200px;
     position: absolute;
     border:1px solid red;
     top:0px;
@@ -264,6 +265,7 @@ label[for="cvc"]{
     height: auto;
     padding:20px;
     width:70%;
+    max-width:400px;
     margin:auto;
     border-radius: 10px;
 }
@@ -276,7 +278,7 @@ label[for="cvc"]{
     font-family: var(--font-family);
     font-size: 18px;
     border-radius: 10px;
-    margin:auto;
+    margin: 20px auto 0;
     display: block;
     
 }
