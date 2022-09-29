@@ -46,7 +46,7 @@ function luhneCheck(code) {
     code.split(' ').join('') // entfernt alle Leerzeichen;
     if (Number.isNaN(code)) return '';
     let len = code.length;
-    let parity = len % 2;
+    let parity = len % 2; // parity = 0 --> even; parity = 1 --> uneven
     let sum = 0;
     for (let i = len-1; i >= 0; i--)
 	{
@@ -56,4 +56,27 @@ function luhneCheck(code) {
         sum += d;
     }
     return sum % 10 === 0 ? true : false;
+}
+
+function nameCheck(name) {
+
+    let regexNum = new RegExp([0-9]) 
+    let regexSpecial = RegExp('.!@#$%^&*()_+-=')
+
+    if (regexNum.test(name)) {
+        return 'Keine zahlen erlaubt';
+    }
+
+    if (regexSpecial.test(name)) {
+        return 'Keine Sonderzeichen erlaubt';
+    }
+
+    let space = name.indexOf(' ')
+    .match(regex) zur Suche von Zahlen im Namen...
+    if (space >= 2 && name.length >= 5) {
+        return true
+    }
+
+    //Suche ein Leerzeichen. 
+    // Prüfkriterium: index[leerzeichen] >=2 und name.length >= 5 und keinerlei Zahlen!!
 }

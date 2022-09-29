@@ -38,6 +38,7 @@ header {
     position:absolute ;
     top: 32px;
     left:73px;
+    filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
 }
 
 .card-frontside {
@@ -45,6 +46,33 @@ header {
     top: 120px;
     left: 17px;
     filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
+}
+
+@media screen and (min-width:900px) {
+    body {
+       max-width: none;
+       display: flex;
+       align-items: center;
+       gap:20%
+    }
+    header {
+        width: 30% ;
+        max-width:400px;
+        height: 100vh;
+    }
+    main {
+        max-width: 450px;
+    }
+
+    .card-backside {
+        top:50%;
+        left:15%;
+    }
+    .card-frontside {
+        top:23%;
+        left:10%
+    }
+
 }
 
 .credit-card-picture {
