@@ -4,7 +4,7 @@ const formArea = document.getElementById('form');
 const successArea = document.getElementById('success');
 const errorArea = document.getElementById('error');
 
-const cvsNumber = document.getElementById('credit-card-cvs-number');
+const cvcNumber = document.getElementById('credit-card-cvs-number');
 const cardNumber = document.getElementById('credit-card-number');
 const cardName = document.getElementById('credit-card-name');
 const cardExpire = document.getElementById('credit-card-expire');
@@ -27,6 +27,13 @@ let regexSpecChar= /[\!\"\§\$\%\&\/\(\)\=\?\<\>\+\*\[\]\,\@]/;
 let regexNum = /[0-9]/ 
 let regexLetters = /[a-zA-Z]/;
 
+// Function calls //
+buttonConfirm.onclick = inputCheck;
+buttonClose.onclick = returnToForm;
+buttonContinue.onclick = returnToEmptyForm;
+
+
+// Function definition //
 
 function inputCheck() {
 
@@ -54,12 +61,24 @@ function inputCheck() {
         return;
     }
 
-    
+    let cvcCheckResult = cvcCheck(inputCVC.value)
+    if (cvcCheckResult) {
+        outputError.innerHTML = "the CVC"
+        outputAdvice.innerHTML = cvcCheckResult;
+        errorArea.style.display = 'block';
+        return;
+    }
+
+    printToCard()
     formArea.style.display = 'none';
     successArea.style.display = 'block';
 }
  
 function numberCheck(code) {
+
+    if (code.length === 0) {
+        return 'Please enter your complete card number.'
+    }
     
     if (regexSpecChar.test(code) || regexLetters.test(code)) { 
         return 'Onyl numbers allowed. Please remove all special characters and letters.'
@@ -125,6 +144,12 @@ function dateCheck(month, year) {
 
 }
 
+function cvcCheck(str) {
+    if (str.length != 3) {
+        return 'Please enter your complete CVC. It musst be three digits.'
+    }
+    return false
+}
 
 function returnToForm() {
     console.log('returnToForm is invoked')
@@ -142,6 +167,10 @@ function returnToEmptyForm() {
     returnToForm();
 }
 
-buttonConfirm.onclick = inputCheck;
-buttonClose.onclick = returnToForm;
-buttonContinue.onclick = returnToEmptyForm;
+function printToCard() {
+    cardName.innerHTML = inputName.value;
+    cardExpire.innerHTML = inputMonth.value + "/" + inputYear.value;
+    cardNumber.innerHTML = inputNumber.value;
+    cvcNumber.innerHTML = inputCVC.value;
+}
+
