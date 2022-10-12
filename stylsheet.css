@@ -49,8 +49,7 @@ header {
 }
 
 @media screen and (min-width:1000px) {
-    body {
-       max-width: 1400px;   
+    body {   
        margin:auto;
        display: flex;
        justify-content: space-between;
