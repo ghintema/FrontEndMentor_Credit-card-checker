@@ -50,6 +50,7 @@ header {
 
 @media screen and (min-width:1000px) {
     body {   
+       max-width: none; 
        margin:auto;
        display: flex;
        justify-content: space-between;
