@@ -66,7 +66,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - how to build an accessible form and giving form instructions.
 - the use of aria-label (wich is hidden from page, only for screenreader) and aria-labelled-by (wich generates programmatic connection between the widget-element and any descriptiv element.) 
 - how to build client-side plausibilisation of form input like 
-    - the lune-algorithm for the card number or 
+    - the luhn-algorithm for the card number or 
     - regular expressions for string-plausibilisation
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
